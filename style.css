@@ -1,0 +1,27 @@
+.btn-group{
+display: flex; 
+justify-content: center;
+
+}
+
+ 
+h1{
+display: flex; 
+justify-content: left;   
+}
+
+.back{
+background-image:url("assets/35e193283abcd3e09df134de00a513413dbe75e2.webp");
+height:100vh;
+
+}
+ .center{
+ display: flex;
+justify-content: center;
+align-items: flex-start;
+
+}
+
+h1{ display: flex;
+}
+
