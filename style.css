@@ -1,27 +1,126 @@
-.btn-group{
-display: flex; 
-justify-content: center;
+.btn-group {
+    display: flex;
+    justify-content: center;
 
 }
 
- 
-h1{
-display: flex; 
-justify-content: left;   
+
+h1 {
+    display: flex;
+    justify-content: left;
 }
 
-.back{
-background-image:url("assets/35e193283abcd3e09df134de00a513413dbe75e2.webp");
-height:100vh;
-
-}
- .center{
- display: flex;
-justify-content: center;
-align-items: flex-start;
+.back {
+    background-image: url("assets/35e193283abcd3e09df134de00a513413dbe75e2.webp");
+    height: 100vh;
 
 }
 
-h1{ display: flex;
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
 }
 
+h1 {
+    display: flex;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+.equipe {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+:root {
+    --card-height: 300px;
+
+    --card-width: calc(var(--card height) 1.5);
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+.card {
+    width:var(--card-width); 
+    height: var(--card-height);
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+    perspective: 2500 px;
+    margin: 0 50 px;
+
+
+
+
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.wrapper {
+    transition: all 0.5s;
+    position: absolute;
+    z-index: 1;
+
+}
+
+.card:hover .wrapper {
+    transform: perspective(900px);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before .wrapper::after {
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 80 px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+    
+}
+.wrapper::before {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(to top,
+            transparent 46% rgba(12, 13 , 19, 0.5) 68%,
+            rgba(12, 13, 19) 97%); 
+
+}
+
+.wrapper::after {
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(to bottom,
+            transparent 46%,
+            rgba(12, 13, 19, 0.5) 68%,
+            rgba(1, 13, 19) 97%);
+
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+    opacity: 1;
+
+}
+
+.card:hover .wrapper::after {
+    height: 120px;
+    
+}
